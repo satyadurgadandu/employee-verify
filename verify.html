@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee Verification</title>
+  <style>
+    body { font-family: Arial; padding: 16px; }
+    .card { max-width: 400px; margin: auto; border: 1px solid #ccc; padding: 16px; border-radius: 10px; }
+    img { width: 120px; height: 140px; object-fit: cover; display: block; margin: 0 auto 10px; }
+    .row { margin: 6px 0; }
+    .label { font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <img id="photo" src="" alt="Employee Photo"/>
+
+  <div class="row"><span class="label">Name:</span> <span id="name"></span></div>
+  <div class="row"><span class="label">ID:</span> <span id="id"></span></div>
+  <div class="row"><span class="label">Designation:</span> <span id="desg"></span></div>
+  <div class="row"><span class="label">Work Place:</span> <span id="place"></span></div>
+  <div class="row"><span class="label">Status:</span> <span id="status"></span></div>
+  <div class="row"><span class="label">Mobile:</span> <span id="mobile"></span></div>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  document.getElementById("photo").src = params.get("photo") || "";
+  document.getElementById("name").textContent = params.get("name") || "-";
+  document.getElementById("id").textContent = params.get("id") || "-";
+  document.getElementById("desg").textContent = params.get("desg") || "-";
+  document.getElementById("place").textContent = params.get("place") || "-";
+  document.getElementById("status").textContent = params.get("status") || "-";
+  document.getElementById("mobile").textContent = params.get("mobile") || "-";
+</script>
+
+</body>
+</html>
